@@ -18,7 +18,7 @@ const Form = () => {
   };
 
   const listaDeAlunos = () => {
-    axios.get('http://3.138.110.107:8080/api/getTodosAlunos')
+    axios.get('https://desafio-dti-backend.onrender.com/api/getTodosAlunos')
     .then((response) => {
       setTodosAlunos(response.data);
     })
@@ -33,7 +33,7 @@ const Form = () => {
     e.preventDefault();
     const aluno = { nome, notas, frequencia: Number(frequencia) };
 
-    axios.post('http://3.138.110.107:8080/api/setAlunos', aluno)
+    axios.post('https://desafio-dti-backend.onrender.com/api/setAlunos', aluno)
       .then((response) => {
         setAlunoInserido(response.data.aluno);
         alert('Aluno inserido com sucesso!');
@@ -45,7 +45,7 @@ const Form = () => {
   };
 
   const handleCalcularMedias = () => {
-    axios.get('http://3.138.110.107:8080/api/getRelatorioMedias')
+    axios.get('https://desafio-dti-backend.onrender.com/api/getRelatorioMedias')
       .then((response) => {
         setResultados(response.data);
       })
